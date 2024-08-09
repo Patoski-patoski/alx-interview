@@ -1,43 +1,40 @@
-### Lockboxes
+### Minimum Operations
 **`Algorithm`** **`Python`**
 
-
-This project contains a function that determines if all the boxes in a list can be opened.
-
 #### Tasks
-0. **Lockboxes**
+0. **Minimum Operations**
 
-You have `n` number of locked boxes in front of you. Each box is numbered sequentially from 0 to `n - 1` and each box may contain keys to the other boxes.
+In a text file, there is a single character `H`. Your text editor can execute only two operations in this file: `Copy All` and `Paste`. Given a number `n`, write a method that calculates the fewest number of operations needed to result in exactly `n` `H` characters in the file.
 
-Write a method that determines if all the boxes can be opened.
+Prototype: `def minOperations(n)`
+Returns an integer
+If `n` is impossible to achieve, return `0`
+Example:
 
-Prototype: `def canUnlockAll(boxes)`
-`boxes` is a list of lists
-A key with the same number as a box opens that box
-You can assume all keys will be positive integers
-There can be keys that do not have boxes
-The first box `boxes[0]` is unlocked
-Return `True` if all boxes can be opened, else return `False`
-```python
-carrie@ubuntu:~/0x01-lockboxes$ cat main_0.py
+`n = 9`
+
+`H` => `Copy All` => `Paste` => `HH` => `Paste` =>`HHH` => `Copy All` => `Paste` => `HHHHHH` => `Paste` => `HHHHHHHHH`
+
+Number of operations: `6`
+```sh
+carrie@ubuntu:~/0x02-minoperations$ cat 0-main.py
 #!/usr/bin/python3
+"""
+Main file for testing
+"""
 
-canUnlockAll = __import__('0-lockboxes').canUnlockAll
+minOperations = __import__('0-minoperations').minOperations
 
-boxes = [[1], [2], [3], [4], []]
-print(canUnlockAll(boxes))
+n = 4
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
 
-boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-print(canUnlockAll(boxes))
-
-boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-print(canUnlockAll(boxes))
-carrie@ubuntu:~/0x01-lockboxes$
+n = 12
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
 ```
-```python
-carrie@ubuntu:~/0x01-lockboxes$ ./main_0.py
-True
-True
-False
-carrie@ubuntu:~/0x01-lockboxes$
+```sh
+carrie@ubuntu:~/0x02-minoperations$
+carrie@ubuntu:~/0x02-minoperations$ ./0-main.py
+Min number of operations to reach 4 characters: 4
+Min number of operations to reach 12 characters: 7
+carrie@ubuntu:~/0x02-minoperations$
 ```
