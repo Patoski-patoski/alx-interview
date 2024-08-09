@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Minimum Number of Operations to Reach a Number
-"""
+"""0-minoperations.py """
 
 
 def minOperations(n: int) -> int:
