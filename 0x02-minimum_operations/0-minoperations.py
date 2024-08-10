@@ -3,41 +3,25 @@
 
 
 def minOperations(n: int) -> int:
-    """
-    Function to calculate the minimum number of operations needed to reach a
-    number `n` starting from 1.
-
-    The operation is defined as: Add 1 to the number on the paper, then copy
-    the number on the paper.
+    """Minimum Operations:  a method that calculates the fewest number of
+       operations needed to result in exactly n H characters in the file.
 
     Args:
-    n (int): The target number to reach.
+        n (int): a number used for minimum operation
 
     Returns:
-    int: The minimum number of operations needed to reach `n`.
+        int: minimum steps or 0
     """
 
-    # Initialize the minimum operations counter
-    min_operations = 0
+    if not n or n < 1:
+        return 0
 
-    # Initialize the divisor
-    divisor = 2
-
-    # While n is greater than 1
+    div = 2
+    operation = 0
     while n > 1:
-
-        # While n is divisible by the divisor
-        while n % divisor == 0:
-
-            # Add the divisor to the minimum operations counter
-            min_operations += divisor
-
-            # Divide n by the divisor
-            n /= divisor
-
-        # Increment the divisor
-        divisor += 1
-
-    # Return the minimum operations counter
-    return min_operations
-
+        if n % div == 0:
+            n = n // div
+            operation += div
+        else:
+            div += 1
+    return operation
