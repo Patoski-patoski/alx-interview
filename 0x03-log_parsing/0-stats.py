@@ -26,7 +26,7 @@ def print_stats(total_file_size: int, status_code_obj: Dict[int, int]) -> None:
     print(f"File size: {total_file_size}")
     for key in sorted(status_code_obj.keys()):
         print(f"{key}: {status_code_obj[key]}")
-    sys.stdout.flush()  # Ensure output is printed immediately
+    sys.stdout.flush()
 
 
 try:
@@ -52,7 +52,7 @@ try:
             print_stats(total_file_size, status_obj)
 
 except KeyboardInterrupt:
-    pass  # This prevents the traceback from being printed
+    pass
 
 finally:
     print_stats(total_file_size, status_obj)
