@@ -43,6 +43,8 @@ if __name__ == '__main__':
             if counter == 10:
                 print_stats(sorted(results.items()), total_file_size)
                 counter = 0
+    except KeyboardInterrupt:
+        pass
 
     finally:
         print_stats(sorted(results.items()), total_file_size)
