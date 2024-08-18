@@ -51,8 +51,5 @@ try:
         if line_count % 10 == 0:
             print_stats(total_file_size, status_obj)
 
-except KeyboardInterrupt:
-    pass
-
 finally:
     print_stats(total_file_size, status_obj)
