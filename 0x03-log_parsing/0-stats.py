@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Stats module"""
 import sys
 import re
 from typing import Dict
@@ -16,6 +17,12 @@ pattern = (
 
 
 def print_stats(total_file_size: int, status_code_obj: Dict[int, int]) -> None:
+    """print_stats- prints the statistics
+
+    Args:
+        total_file_size (int): total file size 
+        status_code_obj (Dict[int, int]): status code objects
+    """
     print(f"File size: {total_file_size}")
     for key in sorted(status_code_obj.keys()):
         print(f"{key}: {status_code_obj[key]}")
