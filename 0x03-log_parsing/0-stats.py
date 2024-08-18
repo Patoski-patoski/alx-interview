@@ -18,10 +18,10 @@ valid_status_codes = [200, 301, 400, 401, 403, 404, 405, 500]
 
 def print_stats(stats: Dict[int, str], total_file_size: int) -> None:
     """ print all items in a dictionary. """
-    print("File size:", total_file_size)
+    sys.stdout.write(f"File size: {total_file_size}\n")
 
     for key, value in stats:
-        print("{}: {}".format(key, value))
+        sys.stdout.write(f"{key}: {value}\n")
 
 
 if __name__ == '__main__':
