@@ -20,7 +20,7 @@ def print_stats(total_file_size: int, status_code_obj: Dict[int, int]) -> None:
     """print_stats- prints the statistics
 
     Args:
-        total_file_size (int): total file size 
+        total_file_size (int): total file size
         status_code_obj (Dict[int, int]): status code objects
     """
     print(f"File size: {total_file_size}")
