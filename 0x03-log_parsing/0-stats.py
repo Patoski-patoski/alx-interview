@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Stats module"""
-import sys
 import re
+import sys
 from typing import Dict
 
 status_obj = {}
@@ -26,7 +26,6 @@ def print_stats(total_file_size: int, status_code_obj: Dict[int, int]) -> None:
     print(f"File size: {total_file_size}")
     for key in sorted(status_code_obj.keys()):
         print(f"{key}: {status_code_obj[key]}")
-    sys.stdout.flush()
 
 
 try:
