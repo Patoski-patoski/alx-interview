@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""N-Queens Problem
-"""
+"""N-Queens Problem"""
 
 import sys
 from typing import List
