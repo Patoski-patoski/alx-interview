@@ -20,8 +20,7 @@ function getCharacterName (url) {
       }
       if (response.statusCode === 200) {
         const characterData = JSON.parse(body);
-        const characterNames = characterData.name;
-        resolve(characterNames);
+        resolve(characterData);
       } else {
         reject(error);
       }
@@ -42,7 +41,7 @@ request(api, (error, response, body) => {
     Promise.all(characterPromises)
       .then((characterNames) => {
         characterNames.forEach((character) => {
-          console.log(character);
+          console.log(character.name);
         });
       })
       .catch(error => {
